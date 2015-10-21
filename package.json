@@ -1,0 +1,27 @@
+{
+  "name": "scribo",
+  "version": "1.0.0",
+  "description": "Scribo is a npm module that can log custom events and measure the time operations take.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chai": "^3.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "gen-test": "mocha ./tests/gen-test.js",
+    "logger-test": "mocha ./tests/logger-test.js; exit 0"
+  },
+  "keywords": [
+    "scribo",
+    "event",
+    "logging",
+    "benchmark"
+  ],
+  "author": "Svetlozar Kalchev <svetlozar@kalchev.eu>",
+  "license": "MIT"
+}
