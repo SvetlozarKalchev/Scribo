@@ -1,6 +1,6 @@
 # App description
 
-Scribo is a logging module for Node.js. It can do 2 simple things - log events and measure how long operations take to complete
+Scribo is a logging module for Node.js. It can do 2 simple things - log events and measure how long operations take to complete.
 
 You specify the allowed Events in the CONFIG, since each event gets logged to a different file.
 # API
