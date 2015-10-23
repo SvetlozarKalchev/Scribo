@@ -13,7 +13,7 @@
     "mocha": "^2.3.3"
   },
   "scripts": {
-    "gen-test": "mocha ./tests/gen-test.js",
+    "gen-test": "mocha ./tests/gen-test.js; exit 0",
     "logger-test": "mocha ./tests/logger-test.js; exit 0"
   },
   "keywords": [
