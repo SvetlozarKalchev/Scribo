@@ -19,6 +19,11 @@ describe('File check', () => {
     done();
   });
 
+  it('/lib/models should have ConsoleWriter.js', (done) => {
+    should.exist(require('../lib/models/ConsoleWriter.js'));
+    done();
+  });
+
   it('/lib/models should have FileWriter.js', (done) => {
     should.exist(require('../lib/models/FileWriter.js'));
     done();
