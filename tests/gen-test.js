@@ -3,26 +3,30 @@ let Chai = require('chai');
 let expect = Chai.expect;
 let should = Chai.should();
 
-describe('check directory for needed files', () => {
-  it('/ should have app.js', () => {
+describe('File check', () => {
+  it('/ should have app.js', (done) => {
     should.exist(require('../app.js'));
+    done();
   });
 
-  it('/lib/controllers should have LoggerController.js', () => {
+  it('/lib/controllers should have LoggerController.js', (done) => {
     should.exist(require('../lib/controllers/LoggerController.js'));
+    done();
   });
 
-  it('/lib/models should have Benchmarker.js', () => {
+  it('/lib/models should have Benchmarker.js', (done) => {
     should.exist(require('../lib/models/Benchmarker.js'));
+    done();
   });
 
-  it('/lib/models should have FileWriter.js', () => {
+  it('/lib/models should have FileWriter.js', (done) => {
     should.exist(require('../lib/models/FileWriter.js'));
+    done();
   });
 
-  it('/lib/models should have Logger.js', () => {
+  it('/lib/models should have Logger.js', (done) => {
     should.exist(require('../lib/models/Logger.js'));
+    done();
   });
 
-
-})
+});
