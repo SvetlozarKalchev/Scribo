@@ -6,6 +6,15 @@ let should = Chai.should();
 
 let Logger = require('../lib/models/Logger.js');
 
+// Arguments that are passed to the functions in the tests
+let eventName = 'Test Event',
+  message = 'Test message',
+  saveable = false,
+  callback = (err, res) => {
+    should.not.exist(err);
+    should.exist(res);
+  };
+
 describe('class Logger', () => {
   it('should have a method checkArgs()', (done) => {
     assert.isFunction(Logger.checkArgs);
@@ -18,8 +27,15 @@ describe('class Logger', () => {
   });
 
   describe('.checkArgs()', () => {
-    it('should return true if args are correct', (done) => {
-      assert.isTrue(Logger.checkArgs('Test', 'Test', false, (err, res) => {
+
+    it('should return true if all args are present and correct', (done) => {
+      assert.isTrue(Logger.checkArgs(eventName, message, saveable, (err, res) => {
+      }));
+      done();
+    });
+
+    it('should return true if message is empty, but the other args are correct', (done) => {
+      assert.isTrue(Logger.checkArgs(eventName, ' ', saveable, (err, res) => {
       }));
       done();
     });
@@ -31,16 +47,11 @@ describe('class Logger', () => {
   });
 
   describe('.logEvent()', () => {
-    it('should return no error and result true if args are correct', () => {
-      let eventName = 'Test Event';
-      let message = 'Test message';
-      let saveable = false;
-      let callback = (err, res) => {
-        should.not.exist(err);
-        should.exist(err);
-      };
-
-      Logger.logEvent(eventName, message, saveable, callback);
+    it('should return no error and result string if args are correct', () => {
+      Logger.logEvent(eventName, message, saveable, (err, result) => {
+        expect(err).to.be.a('null');
+        expect(result).to.be.a('string');
+      });
     });
   });
 
