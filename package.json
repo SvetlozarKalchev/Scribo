@@ -14,7 +14,8 @@
   },
   "scripts": {
     "gen-test": "mocha ./tests/gen-test.js; exit 0",
-    "logger-test": "mocha -R spec ./tests/logger-test.js; exit 0"
+    "logger-test": "mocha ./tests/logger-test.js; exit 0",
+    "bench-test": "mocha ./tests/benchmarker-test.js; exit 0"
   },
   "keywords": [
     "scribo",
