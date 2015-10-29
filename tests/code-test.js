@@ -1,15 +1,22 @@
 'use strict'
 let Logger = require('../lib/models/Logger.js');
+let Benchmarker = require('../lib/models/Benchmarker.js');
 
-let dbBench = Logger.startBench('DB Write');
+let dbBench = Benchmarker.startBench('Operations');
 
-console.log('Started clock at: ' + dbBench);
+// for (let i = 0; i < 1; i++) {
+//   // var obj = new Object(Array);
+//   //var obj = new Array();
+//   // var obj = Object.create(Array);
+//   // var obj = [];
+//
+// }
 
-for (let i = 0; i < 1000000; i++) {
-  let arr = [];
-  arr.push(i)
-}
+let b = Benchmarker.startBench('Benchmark creation');
+Benchmarker.endBench(b, false, (err, ms) => {
+  //console.log('Finished in: ', ms);
+})
 
-Logger.endBench(dbBench, false, (err, ms) => {
+Benchmarker.endBench(dbBench, false, (err, ms) => {
   console.log('Operation finished in: ', ms, 'ms.');
 });
