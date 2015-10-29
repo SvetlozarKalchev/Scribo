@@ -19,7 +19,7 @@ You specify the allowed Events in the CONFIG, since each event gets logged to a 
 You log an event like that:
 
     http.createServer(function onRequest(req, res) {
-      Scribo.logEvent('HTTP Request');
+      Scribo.logEvent('HTTP Request', 'message goes here');
       // Request handling...
     });
 
