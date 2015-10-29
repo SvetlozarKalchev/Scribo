@@ -4,13 +4,13 @@ let expect = Chai.expect;
 let should = Chai.should();
 
 describe('File check', () => {
-  it('/ should have app.js', (done) => {
-    should.exist(require('../app.js'));
+  it('/ should have index.js', (done) => {
+    should.exist(require('../index.js'));
     done();
   });
 
-  it('/lib/controllers should have LoggerController.js', (done) => {
-    should.exist(require('../lib/controllers/LoggerController.js'));
+  it('/ should have EVENTS.js', (done) => {
+    should.exist(require('../EVENTS.js'));
     done();
   });
 

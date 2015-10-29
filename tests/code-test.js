@@ -12,11 +12,16 @@ let dbBench = Benchmarker.startBench('Operations');
 //
 // }
 
-let b = Benchmarker.startBench('Benchmark creation');
-Benchmarker.endBench(b, false, (err, ms) => {
-  //console.log('Finished in: ', ms);
-})
+//console.log(end);
+// let b = Benchmarker.startBench('Benchmark creation');
+// Benchmarker.endBench(b, false, (err, ms) => {
+//   //console.log('Finished in: ', ms);
+// })
 
-Benchmarker.endBench(dbBench, false, (err, ms) => {
-  console.log('Operation finished in: ', ms, 'ms.');
+Benchmarker.endBench(dbBench, true, (err, ms) => {
+  //console.log('Operation finished in: ', ms, 'ms.');
 });
+
+let b = process.hrtime();
+let end = process.hrtime(b);
+console.log(end[1] / 1000000);
