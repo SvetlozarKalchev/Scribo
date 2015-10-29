@@ -4,22 +4,25 @@ Scribo is a logging module for Node.js. It can do 2 simple things - log events a
 
 You specify the allowed Events in the CONFIG, since each event gets logged to a different file.
 # API
-####Scribo.logEvent(eventName, callback);
-    Outputs -> 00:00:00 HTTP request to /
-    Callback optional.
+####Scribo.logEvent(eventName, message, saveable, callback);
+This outputs:
+
+    date time | eventName : message
+
+Event name and message must be strings. Saveable must be a boolean and indicates if the event should be written to its corresponding log file or nor. Callback is optional.
 
 ####Scribo.startBench(eventName);
-    Returns an object with the current time.
+    Returns an object with the current time which serves as benchmark start.
 
 ####Scribo.endBench(eventStart, loggable, callback)
-    Calculates the elapsed time. If loggable is set to TRUE, saves the result.
+    Calculates the elapsed time. If loggable is set to TRUE, saves the result to the benchmark's corresponding log file.
 
 # Examples
 
 You log an event like that:
 
     http.createServer(function onRequest(req, res) {
-      Scribo.logEvent('HTTP Request', 'message goes here');
+      Scribo.logEvent('event name', 'message', false);
       // Request handling...
     });
 
