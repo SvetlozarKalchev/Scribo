@@ -7,13 +7,14 @@
     "test": "tests"
   },
   "dependencies": {
-    
+
   },
   "devDependencies": {
     "mocha": "^2.3.3",
     "chai": "^3.4.0"
   },
   "scripts": {
+    "tests": "mocha -R spec ./tests; exit 0",
     "gen-test": "mocha ./tests/gen-test.js; exit 0",
     "logger-test": "mocha ./tests/logger-test.js; exit 0",
     "bench-test": "mocha ./tests/benchmarker-test.js; exit 0"

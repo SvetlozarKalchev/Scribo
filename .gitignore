@@ -1,3 +1,4 @@
 # Ignore modules and log files
 node_modules
 logs
+/tests/code-test.js
