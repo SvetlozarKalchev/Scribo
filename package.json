@@ -1,6 +1,6 @@
 {
   "name": "scribo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Scribo is a npm module that can log custom events and measure the time operations take.",
   "main": "index.js",
   "directories": {
