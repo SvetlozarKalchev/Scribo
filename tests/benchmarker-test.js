@@ -11,24 +11,27 @@ let Benchmarker = require('../lib/models/Benchmarker.js');
 describe('class Benchmarker', () => {
 
   describe('.toMS()', () => {
-    it('should return no error and int result when args are correct', (done) => {
-      Benchmarker.toMs(10, 123456, (err, result) => {
-        expect(err).to.be.a('null');
-        expect(result).to.be.a('string');
-      });
+    it('should return string result when args are correct', (done) => {
+      assert.isString(Benchmarker.toMs(123, 123456));
       done();
     });
   });
 
   describe('.startBench()', () => {
     it('should return no error and an array when args are correct', (done) => {
-      Benchmarker.startBench('Test Bench', (err, result) => {
-        expect(err).to.be.a('null');
-        expect(result).to.be.an('array');
-      });
+      assert.isArray(Benchmarker.startBench('CorrectArg'));
       done();
     });
+
+    it('should return an error when args are wrong', (done) => {
+      expect(Benchmarker.startBench(1)).to.have.property('message');
+      done();
+    });
+
   });
 
+  describe('endBench()', () => {
+
+  });
 
 });
