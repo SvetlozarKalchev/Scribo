@@ -9,6 +9,13 @@ let Benchmarker = require('../lib/models/Benchmarker.js');
 // Arguments to plug in the class methods.
 
 describe('class Benchmarker', () => {
+  // let error, result;
+  // let bench = Benchmarker.startBench('Test');
+  //
+  // Benchmarker.endBench(bench, false, (err, res) => {
+  //   error = err;
+  //   result = res;
+  // });
 
   describe('.toMS()', () => {
     it('should return string result when args are correct', (done) => {
@@ -31,6 +38,8 @@ describe('class Benchmarker', () => {
   });
 
   describe('endBench()', () => {
+    it('should return no error and a string result when saveable is set to false', () => {
+    });
 
   });
 
