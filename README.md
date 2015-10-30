@@ -18,6 +18,7 @@ Event name and message must be strings. Saveable must be a boolean and indicates
     Calculates the elapsed time. If loggable is set to TRUE, saves the result to the benchmark's corresponding log file.
 
 # Examples
+If you want to log events/benchmarks to a file, you need to add each event/benchmark name to the events array. It's located in the EVENTS.js file. The comment in that file has a few examples.
 
 You log an event like that:
 

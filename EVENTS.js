@@ -11,5 +11,6 @@
 
 let filePath = './logs/';
 let events = new Map();
+events.set('test', filePath + 'test-log.txt');
 
 module.exports = events;
